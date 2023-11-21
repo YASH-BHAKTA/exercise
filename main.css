@@ -15,3 +15,69 @@ h1 {
 p {
     font-size: large;
 }
+/* styles.css */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+    
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 1 / 3 / 2; }
+.div4 { grid-area: 2 / 2 / 3 / 3; }
+.div5 { grid-area: 3 / 1 / 4 / 2; }
+.div6 { grid-area: 3 / 2 / 4 / 3; }
+  
+  .text-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+/* Looping Animation */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.looping-animation {
+    display: inline-block;
+    font-size: 24px;
+    animation: rotate 2s linear infinite; /* Rotate the element indefinitely */
+}
+
+/* Hover Animations */
+@keyframes scale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes colorChange {
+    0% { color: black; }
+    50% { color: blue; }
+    100% { color: black; }
+}
+
+.hover-animation {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s ease-out, color 0.3s ease-out; /* Smooth transition for hover effect */
+}
+
+.hover-animation:hover {
+    transform: scale(1.2);
+    color: blue;
+    animation: scale 2s infinite alternate, colorChange 2s infinite alternate; /* Scale and color change on hover */
+}
